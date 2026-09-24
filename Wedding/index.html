@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d1613">
+<title>Supriya weds Soumya</title>
+
+<meta name="description" content="Supriya weds Soumya. Dates, venues, directions and contacts.">
+<meta property="og:title" content="Supriya weds Soumya">
+<meta property="og:description" content="We would be honoured by your presence.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+   ══════════════════════════════════════════ */
+:root{
+  --gold:#e8b87a;
+  --gold-dim:#c39d5c;
+  --gold-deep:#8a6a3c;
+  --cream:#f7ecd6;
+  --muted:#a08e77;
+  --faint:#7d6d59;
+
+  /* warm brown base rather than near-black — the old #0d0a08 read as
+     a dead flat field once there was a whole page of it to look at */
+  --bg:#191210;
+  --bg-deep:#120c0a;
+  --panel:rgba(255,255,255,.062);
+  --panel-2:rgba(255,255,255,.04);
+  --line:rgba(232,184,122,.3);
+  --line-soft:rgba(232,184,122,.17);
+  --nav-bg:rgba(30,22,18,.93);
+
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+
+  --nav-h:64px;
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--cream);
+  min-height:100vh;
+  min-height:100dvh;   /* dvh tracks the mobile address bar; vh is the fallback */
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  /* base tone only — the coloured glows live on body::before below */
+  background-image:linear-gradient(180deg,#1d1613 0%,#191210 48%,var(--bg-deep) 100%);
+  background-repeat:no-repeat;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+}
+
+/* Warm candle glow at the top, a copper bloom off to one side, an amber
+   wash at the foot. Painted on one pinned layer rather than as a body
+   background, because iOS ignores background-attachment:fixed and
+   re-tiles the gradient on every scroll, which bands visibly. */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 85% 30% at 50% 0%,rgba(244,196,132,.2),rgba(0,0,0,0) 62%),
+    radial-gradient(ellipse 70% 28% at 88% 40%,rgba(198,124,84,.12),rgba(0,0,0,0) 60%),
+    radial-gradient(ellipse 95% 36% at 50% 100%,rgba(214,150,96,.13),rgba(0,0,0,0) 60%);
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+
+.wrap{
+  max-width:470px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* ══════════════════════════════════════════
+   SHARED BITS
+   ══════════════════════════════════════════ */
+
+/* small uppercase label */
+.eyebrow{
+  font-size:8.5px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+  font-weight:500;
+}
+
+/* gold rule with a diamond in the middle */
+.orn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+.orn::before,
+.orn::after{
+  content:'';
+  height:1px;
+  flex:1;
+  max-width:70px;
+  background:linear-gradient(90deg,rgba(232,184,122,0),var(--line));
+}
+.orn::after{
+  background:linear-gradient(90deg,var(--line),rgba(232,184,122,0));
+}
+.orn i{
+  width:5px;
+  height:5px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  opacity:.75;
+  flex:none;
+}
+
+/* section heading */
+.sec{
+  padding-top:44px;
+  scroll-margin-top:14px;
+}
+.sec-head{
+  text-align:center;
+  margin-bottom:20px;
+}
+.sec-head .eyebrow{
+  display:block;
+  margin-bottom:9px;
+}
+.sec-head h2{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:30px;
+  line-height:1.15;
+  letter-spacing:.4px;
+  color:var(--cream);
+}
+.sec-head .sub{
+  margin-top:7px;
+  font-size:12px;
+  color:var(--faint);
+  font-weight:300;
+}
+
+/* ══════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════ */
+.hero{
+  padding-top:calc(46px + env(safe-area-inset-top));
+  padding-bottom:6px;
+  text-align:center;
+}
+
+.hero .eyebrow{
+  display:block;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(38px,12vw,54px);
+  line-height:1.02;
+  letter-spacing:.5px;
+  color:var(--cream);
+}
+/* the "weds" between the two names — sized well below them so the
+   names stay the thing you read first */
+.hero h1 .amp{
+  display:block;
+  font-style:italic;
+  font-size:.36em;
+  letter-spacing:2.5px;
+  color:var(--gold);
+  margin:7px 0 5px;
+  opacity:.92;
+}
+
+.hero .occasion{
+  margin-top:20px;
+  font-size:9.5px;
+  letter-spacing:4.4px;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:500;
+}
+
+.hero .orn{
+  margin-top:16px;
+}
+
+.hero .blessing{
+  margin-top:22px;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+/* countdown */
+.countdown{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+.cd-cell{
+  background:var(--panel-2);
+  border:1px solid var(--line-soft);
+  border-radius:12px;
+  padding:11px 4px 9px;
+}
+.cd-cell b{
+  display:block;
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:24px;
+  line-height:1;
+  color:var(--gold);
+  font-variant-numeric:tabular-nums;
+}
+.cd-cell span{
+  display:block;
+  margin-top:5px;
+  font-size:7.5px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--faint);
+}
+.countdown.done{
+  grid-template-columns:1fr;
+}
+.countdown.done .cd-cell b{
+  font-size:19px;
+}
+
+/* scroll hint */
+.hint{
+  margin-top:26px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  font-size:8px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+}
+.hint svg{
+  width:15px;
+  height:15px;
+  animation:bob 2.2s ease-in-out infinite;
+}
+@keyframes bob{
+  0%,100%{transform:translateY(0);opacity:.55}
+  50%{transform:translateY(4px);opacity:1}
+}
+
+/* ══════════════════════════════════════════
+   EVENT CARD  (wedding / reception)
+   ══════════════════════════════════════════ */
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+/* coloured strip at the top of each event card */
+.card-top{
+  padding:15px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(140deg,rgba(232,184,122,.13),rgba(232,184,122,.03));
+  border-bottom:1px solid var(--line-soft);
+}
+.card-top .badge{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(150deg,#e8b87a,#c2914d);
+  color:#1a1310;
+}
+.card-top .badge svg{
+  width:18px;
+  height:18px;
+}
+.card-top .t{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:.3px;
+  color:var(--cream);
+}
+.card-top .d{
+  font-size:10px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+  margin-top:1px;
+}
+
+/* detail rows */
+.row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:14px 18px;
+  border-bottom:1px solid var(--line-soft);
+}
+.row:last-of-type{
+  border-bottom:none;
+}
+.row .ic{
+  width:22px;
+  flex:none;
+  color:var(--gold);
+  display:flex;
+  justify-content:center;
+  padding-top:2px;
+}
+.row .ic svg{
+  width:18px;
+  height:18px;
+}
+.row .k{
+  font-size:7.5px;
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+}
+.row .v{
+  margin-top:3px;
+  font-size:16px;
+  line-height:1.35;
+  color:var(--cream);
+  font-weight:400;
+}
+.row .s{
+  margin-top:2px;
+  font-size:11.5px;
+  line-height:1.45;
+  color:var(--muted);
+}
+.row .v.tba{
+  color:var(--gold-dim);
+  font-style:italic;
+  font-family:var(--serif);
+  font-size:18px;
+}
+/* longer prose (the "good to know" line) sits quieter than a fact */
+.row .v.soft{
+  font-size:13px;
+  line-height:1.55;
+  color:var(--muted);
+}
+
+/* buttons inside a card */
+.card-acts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:14px 14px 16px;
+  border-top:1px solid var(--line-soft);
+  background:rgba(0,0,0,.14);
+}
+
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:48px;
+  padding:12px 10px;
+  border-radius:13px;
+  border:1px solid transparent;
+  font-family:inherit;
+  font-size:10.5px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  text-align:center;
+  transition:transform .15s ease,opacity .15s ease;
+}
+.btn svg{
+  width:17px;
+  height:17px;
+  flex:none;
+}
+.btn:active{
+  transform:scale(.97);
+}
+
+.btn.solid{
+  background:linear-gradient(150deg,#e8b87a,#c2914d);
+  color:#1a1310;
+}
+.btn.ghost{
+  background:transparent;
+  border-color:rgba(232,184,122,.45);
+  color:var(--gold);
+}
+.btn.off{
+  background:transparent;
+  border-color:rgba(232,184,122,.16);
+  color:var(--gold-deep);
+  cursor:default;
+  pointer-events:none;
+  letter-spacing:1.2px;
+}
+.btn.off svg{
+  opacity:.5;
+}
+
+/* ══════════════════════════════════════════
+   MEMORIES
+   ══════════════════════════════════════════ */
+.strip{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  /* bleed past .wrap padding so photos reach the screen edge */
+  margin:0 -20px;
+  padding:2px 20px 4px;
+}
+.strip::-webkit-scrollbar{display:none}
+
+.shot{
+  flex:none;
+  width:74%;
+  max-width:300px;
+  aspect-ratio:3/4;
+  scroll-snap-align:center;
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  background:var(--panel-2);
+  border:1px solid var(--line-soft);
+  cursor:pointer;
+}
+.shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.shot .cap{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:26px 14px 12px;
+  font-size:11px;
+  letter-spacing:.3px;
+  color:#fff;
+  background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,0));
+  pointer-events:none;
+}
+
+/* frame shown when the image file is missing */
+.shot.empty{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border-style:dashed;
+  border-color:rgba(232,184,122,.2);
+  color:var(--gold-deep);
+  cursor:default;
+  padding:16px;
+  text-align:center;
+}
+.shot.empty svg{
+  width:26px;
+  height:26px;
+  opacity:.55;
+}
+.shot.empty span{
+  font-size:9.5px;
+  letter-spacing:1.4px;
+  line-height:1.6;
+  word-break:break-all;
+}
+
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin-top:14px;
+}
+.dots i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:rgba(232,184,122,.28);
+  transition:width .2s ease,background .2s ease;
+}
+.dots i.on{
+  width:16px;
+  border-radius:3px;
+  background:var(--gold);
+}
+
+/* ══════════════════════════════════════════
+   LIGHTBOX
+   ══════════════════════════════════════════ */
+.lb{
+  position:fixed;
+  inset:0;
+  z-index:80;
+  background:rgba(8,6,5,.97);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:calc(20px + env(safe-area-inset-top)) 14px calc(20px + env(safe-area-inset-bottom));
+}
+.lb.open{
+  display:flex;
+  animation:fade .2s ease;
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+.lb img{
+  max-width:100%;
+  max-height:76vh;
+  object-fit:contain;
+  border-radius:12px;
+}
+.lb .lb-cap{
+  margin-top:16px;
+  font-size:12.5px;
+  color:var(--muted);
+  text-align:center;
+  max-width:340px;
+  min-height:18px;
+}
+.lb .lb-count{
+  margin-top:8px;
+  font-size:9px;
+  letter-spacing:2.4px;
+  color:var(--gold-deep);
+  font-variant-numeric:tabular-nums;
+}
+
+.lb-btn{
+  position:absolute;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.lb-btn svg{width:20px;height:20px}
+.lb-btn:active{transform:scale(.93)}
+.lb-close{
+  top:calc(16px + env(safe-area-inset-top));
+  right:16px;
+}
+.lb-prev{left:12px;top:50%;margin-top:-22px}
+.lb-next{right:12px;top:50%;margin-top:-22px}
+
+/* ══════════════════════════════════════════
+   CALENDAR PICKER (bottom sheet)
+   ══════════════════════════════════════════ */
+.pick{
+  position:fixed;
+  inset:0;
+  z-index:85;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  background:rgba(6,4,3,.7);
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+.pick.open{
+  display:flex;
+  animation:fade .2s ease;
+}
+
+.pick-card{
+  width:100%;
+  max-width:470px;
+  background:#231a16;
+  border:1px solid var(--line);
+  border-bottom:none;
+  border-radius:22px 22px 0 0;
+  padding:14px 18px calc(20px + env(safe-area-inset-bottom));
+  animation:pickUp .32s cubic-bezier(.2,.9,.3,1);
+}
+@keyframes pickUp{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0)}
+}
+
+.pick-grip{
+  width:38px;
+  height:4px;
+  border-radius:3px;
+  background:rgba(232,184,122,.3);
+  margin:0 auto 16px;
+}
+.pick-t{
+  text-align:center;
+  font-family:var(--serif);
+  font-size:21px;
+  color:var(--cream);
+}
+.pick-s{
+  text-align:center;
+  font-size:11.5px;
+  color:var(--muted);
+  margin-top:4px;
+  margin-bottom:18px;
+}
+
+.opt{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  width:100%;
+  padding:14px 15px;
+  margin-bottom:10px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  color:var(--cream);
+  text-decoration:none;
+  font-family:inherit;
+  text-align:left;
+  cursor:pointer;
+  transition:transform .15s ease;
+}
+.opt:active{transform:scale(.98)}
+.opt .oi{
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(232,184,122,.12);
+  color:var(--gold);
+}
+.opt .oi svg{width:19px;height:19px}
+.opt .ot{font-size:14.5px;line-height:1.25}
+.opt .os{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+.opt .go{margin-left:auto;color:var(--gold-deep);font-size:20px;flex:none}
+
+.pick-x{
+  width:100%;
+  margin-top:4px;
+  padding:13px;
+  border-radius:14px;
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--faint);
+  font-family:inherit;
+  font-size:10px;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+/* ══════════════════════════════════════════
+   CONTACT
+   ══════════════════════════════════════════ */
+.person{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:13px 15px;
+  margin-bottom:10px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+.person:last-child{margin-bottom:0}
+
+.person .av{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(150deg,#e8b87a,#c2914d);
+  color:#1a1310;
+  font-weight:600;
+  font-size:14px;
+  font-family:var(--serif);
+  letter-spacing:.5px;
+}
+.person .info{
+  min-width:0;
+  flex:1;
+}
+.person .nm{
+  font-size:14.5px;
+  color:var(--cream);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.person .rl{
+  font-size:8.5px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+  margin-top:2px;
+}
+.person .tel{
+  font-size:12.5px;
+  color:var(--muted);
+  margin-top:3px;
+  letter-spacing:.4px;
+  font-variant-numeric:tabular-nums;
+}
+.person .taps{
+  display:flex;
+  gap:7px;
+  flex:none;
+}
+.tap{
+  width:40px;
+  height:40px;
+  border-radius:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border:1px solid rgba(232,184,122,.32);
+  color:var(--gold);
+  background:rgba(232,184,122,.06);
+}
+.tap svg{width:18px;height:18px}
+.tap:active{transform:scale(.93)}
+.tap.wa{
+  border-color:rgba(37,211,102,.34);
+  color:#5fe08e;
+  background:rgba(37,211,102,.07);
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════ */
+.foot{
+  margin-top:40px;
+  padding-bottom:30px;
+  text-align:center;
+}
+.foot .orn{margin-bottom:20px}
+
+.share{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 22px;
+  border-radius:30px;
+  border:1px solid rgba(232,184,122,.32);
+  background:transparent;
+  color:var(--gold);
+  font-family:inherit;
+  font-size:10px;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+  font-weight:500;
+  cursor:pointer;
+}
+.share svg{width:15px;height:15px}
+.share:active{transform:scale(.97)}
+
+.sig{
+  margin-top:24px;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:19px;
+  line-height:1.5;
+  color:var(--gold);
+}
+.sig small{
+  display:block;
+  margin-top:10px;
+  font-family:var(--sans);
+  font-style:normal;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--faint);
+}
+
+/* ══════════════════════════════════════════
+   STICKY NAV
+   ══════════════════════════════════════════ */
+/* Pinned to the viewport, NOT to the end of the document — it sits on
+   top of the page at every scroll position, on phones included. The
+   body's padding-bottom reserves the space so it never covers content. */
+.nav{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:60;
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  padding-bottom:env(safe-area-inset-bottom);
+  display:flex;
+  background:var(--nav-bg);
+  border-top:1px solid var(--line-soft);
+  box-shadow:0 -12px 30px rgba(0,0,0,.45);
+  /* slides up once on load so the eye catches it */
+  animation:navIn .55s cubic-bezier(.2,.9,.3,1) .25s both;
+}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .nav{
+    background:rgba(30,22,18,.8);
+    -webkit-backdrop-filter:blur(18px) saturate(1.3);
+    backdrop-filter:blur(18px) saturate(1.3);
+  }
+}
+@keyframes navIn{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0)}
+}
+
+.nav-in{
+  max-width:470px;
+  margin:0 auto;
+  width:100%;
+  display:grid;
+  /* auto-flow rather than a fixed count, so the bar splits itself
+     evenly however many links this page happens to carry */
+  grid-auto-flow:column;
+  grid-auto-columns:1fr;
+}
+
+.nav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  text-decoration:none;
+  color:var(--faint);
+  font-size:8px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  position:relative;
+  overflow:hidden;
+  touch-action:manipulation;
+  transition:color .25s ease;
+}
+
+/* gold pill that fades in behind the active item */
+.nav a::after{
+  content:'';
+  position:absolute;
+  top:7px;bottom:7px;left:9px;right:9px;
+  border-radius:13px;
+  background:radial-gradient(ellipse at 50% 30%,rgba(232,184,122,.2),rgba(232,184,122,.06));
+  opacity:0;
+  transform:scale(.82);
+  transition:opacity .28s ease,transform .28s cubic-bezier(.2,.9,.3,1);
+  pointer-events:none;
+}
+
+/* the little bar along the top edge */
+.nav a::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:50%;
+  margin-left:-14px;   /* explicit centring — don't rely on the flex static position */
+  width:28px;
+  height:2.5px;
+  border-radius:0 0 3px 3px;
+  background:var(--gold);
+  box-shadow:0 0 10px rgba(232,184,122,.75);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .3s cubic-bezier(.2,.9,.3,1);
+}
+
+/* :not(.ripple) matters — the ripple is a span in here too, and this
+   rule would otherwise out-specify its absolute positioning */
+.nav a svg,
+.nav a span:not(.ripple){
+  position:relative;
+  z-index:1;
+  transition:transform .3s cubic-bezier(.34,1.4,.5,1);
+}
+.nav a svg{
+  width:20px;
+  height:20px;
+}
+
+/* ── active section ── */
+.nav a.on{
+  color:var(--gold);
+}
+.nav a.on::before{transform:scaleX(1)}
+.nav a.on::after{opacity:1;transform:scale(1)}
+.nav a.on svg{transform:translateY(-1px) scale(1.14)}
+
+/* ── finger is down ── */
+.nav a:active svg{transform:scale(.86)}
+.nav a:active{color:var(--gold)}
+
+/* ── ripple from the tap point, added by JS ── */
+.ripple{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(232,184,122,.45);
+  transform:translate(-50%,-50%) scale(0);
+  opacity:.9;
+  pointer-events:none;
+  animation:ripple .55s ease-out forwards;
+}
+@keyframes ripple{
+  to{transform:translate(-50%,-50%) scale(1);opacity:0}
+}
+
+/* ── one-off shimmer on first load, so nobody misses the bar ── */
+.nav.hint-once .nav-in::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(100deg,
+    rgba(232,184,122,0) 30%,
+    rgba(232,184,122,.24) 50%,
+    rgba(232,184,122,0) 70%);
+  animation:sweep 1.5s ease-in-out .7s 2;
+}
+.nav-in{position:relative;overflow:hidden}
+@keyframes sweep{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(100%)}
+}
+
+/* ── toast ── */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 16px);
+  transform:translate(-50%,14px);
+  z-index:90;
+  padding:11px 20px;
+  border-radius:24px;
+  background:rgba(30,23,18,.97);
+  border:1px solid var(--line);
+  color:var(--cream);
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;
+  max-width:88vw;
+  text-align:center;
+}
+.toast.on{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* reveal on scroll */
+.rv{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .55s ease,transform .55s ease;
+}
+.rv.in{
+  opacity:1;
+  transform:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero wrap">
+  <span class="eyebrow" id="kicker">Together with our families</span>
+
+  <h1>
+    <span id="nameA">Soumya</span>
+    <span class="amp" id="joiner">weds</span>
+    <span id="nameB">Supriya</span>
+  </h1>
+
+  <div class="occasion" id="occasion">We&rsquo;re getting married</div>
+
+  <div class="orn"><i></i></div>
+
+  <p class="blessing" id="blessing"></p>
+
+  <div class="countdown" id="countdown" aria-live="polite"></div>
+
+  <div class="hint">
+    <span>Scroll for details</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <!-- ══════════ WEDDING ══════════ -->
+  <section class="sec wrap rv" id="wedding">
+    <div class="sec-head">
+      <!-- <span class="eyebrow">Ceremony one</span> -->
+      <h2>The Wedding</h2>
+      <p class="sub" id="weddingSub"></p>
+    </div>
+    <div class="card" id="weddingCard"></div>
+  </section>
+
+  <!-- ══════════ MEMORIES ══════════ -->
+  <section class="sec wrap rv" id="memories">
+    <div class="sec-head">
+      <span class="eyebrow">A little of our story</span>
+      <h2>Our Memories</h2>
+      <p class="sub">Swipe through &middot; tap any photo to enlarge</p>
+    </div>
+    <div class="strip" id="strip"></div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section class="sec wrap rv" id="contact">
+    <div class="sec-head">
+      <span class="eyebrow">Any questions?</span>
+      <h2>Reach Us</h2>
+      <p class="sub">Tap to call, or message on WhatsApp</p>
+    </div>
+    <div id="people"></div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="foot wrap rv">
+    <div class="orn"><i></i></div>
+
+    <!-- <button class="share" id="shareBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>
+      </svg>
+      Share this invite
+    </button> -->
+
+    <p class="sig" id="signature"></p>
+  </footer>
+
+</main>
+
+<!-- ══════════ STICKY NAV ══════════ -->
+<nav class="nav" aria-label="Jump to section">
+  <div class="nav-in">
+    <a href="#wedding" data-t="wedding">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3.5l2.2 2.6-2.2 2.6-2.2-2.6z"/><circle cx="12" cy="15" r="5.5"/>
+      </svg>
+      <span>Wedding</span>
+    </a>
+    <a href="#memories" data-t="memories">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="6" width="18" height="14" rx="2.5"/><path d="M8.5 6l1.4-2.2h4.2L15.5 6"/><circle cx="12" cy="13" r="3.4"/>
+      </svg>
+      <span>Photos</span>
+    </a>
+    <a href="#contact" data-t="contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <img id="lbImg" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<!-- ══════════ CALENDAR PICKER ══════════ -->
+<div class="pick" id="pick" role="dialog" aria-modal="true" aria-labelledby="pickT">
+  <div class="pick-card">
+    <div class="pick-grip"></div>
+    <div class="pick-t" id="pickT">Add to your calendar</div>
+    <div class="pick-s" id="pickS"></div>
+
+    <a class="opt" id="optGoogle" href="#" target="_blank" rel="noopener">
+      <span class="oi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/>
+        </svg>
+      </span>
+      <span>
+        <span class="ot">Google Calendar</span>
+        <span class="os">Opens straight in the app or browser</span>
+      </span>
+      <span class="go">&#8250;</span>
+    </a>
+
+    <button class="opt" id="optIcs" type="button">
+      <span class="oi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v11M8 10.5l4 4 4-4"/><path d="M4 16v3.5h16V16"/>
+        </svg>
+      </span>
+      <span>
+        <span class="ot">Apple, Outlook or other</span>
+        <span class="os">Downloads a calendar file to open</span>
+      </span>
+      <span class="go">&#8250;</span>
+    </button>
+
+    <button class="pick-x" id="pickX" type="button">Cancel</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ▼▼▼  EVERYTHING YOU NEED TO EDIT IS IN THIS ONE BLOCK  ▼▼▼
+   Change the values, save the file, refresh. Nothing below
+   this block needs to be touched.
+   ═══════════════════════════════════════════════════════════════ */
+
+var CONFIG = {
+
+  /* ── Where the events actually happen ───────────────────────
+     Every time below is read as the venue's local time. This is
+     what keeps a guest in Dubai or New Jersey from getting the
+     wrong hour in their calendar. Leave as IST for India.
+     ───────────────────────────────────────────────────────── */
+  timezone: '+05:30',
+  tzLabel:  'IST',
+
+  /* ── The two of you ─────────────────────────────────────── */
+  couple: {
+    nameA:     'Supriya',
+    joiner:    'weds',          // shown between the two names
+    nameB:     'Soumya',
+    kicker:    'Together with our families',
+    occasion:  'We’re getting married',
+    blessing:  'Two hearts, one journey — and we would love you beside us as it begins.',
+    signature: 'We can’t wait to celebrate with you',
+    signoff:   'Soumya &amp; Supriya'
+  },
+
+  /* ── THE WEDDING ────────────────────────────────────────────
+     date  : 'YYYY-MM-DD'  (leave '' to show "To be announced")
+     start : 'HH:MM' in 24-hour time, e.g. '18:00' for 6 PM
+     end   : 'HH:MM' — only used for the calendar entry
+     venue / address : leave '' and it shows "To be announced"
+     mapUrl: paste the Google Maps share link.
+             Leave '' and the button turns into a quiet
+             "Location coming soon" instead of a dead link.
+     ───────────────────────────────────────────────────────── */
+  wedding: {
+    label:   'Wedding Ceremony',
+    date:    '2027-01-28',
+    start:   '19:00',
+    // end:     '23:00',
+    timeNote:'Onwards',
+    venue:   'Own residence of Mr. Priya Ranjan Saha',
+    address: 'Krushnachandrapur, Mayurbhanj, Odisha',
+    mapUrl:  'https://share.google/4LsYoX7MBa2GFAkEc'
+  },
+
+  /* This page is the WEDDING-ONLY invite — there is deliberately no
+     reception block here. The full version lives in the parent folder. */
+
+  /* ── OUR MEMORIES ───────────────────────────────────────────
+     The photos are shared with the other two pages, so these point
+     up one level at the project's own "photos" folder. Add an image
+     once and all three pages pick it up.
+     Keep each photo under ~500 KB so the page stays fast on
+     mobile data. Portrait (3:4) photos look best.
+     caption is optional — use '' for none.
+     ───────────────────────────────────────────────────────── */
+  photos: [
+    { src:'../photos/1.jpg', caption:'The day it all began' },
+    { src:'../photos/2.jpg', caption:'' },
+    { src:'../photos/3.jpg', caption:'' },
+    { src:'../photos/4.jpg', caption:'' },
+    { src:'../photos/5.jpg', caption:'' },
+    { src:'../photos/6.jpg', caption:'' }
+  ],
+
+  /* ── CONTACTS ───────────────────────────────────────────────
+     phone must include the country code, digits only after +
+     whatsapp: true adds a WhatsApp button next to the call one
+     ───────────────────────────────────────────────────────── */
+  contacts: [
+    { name:'Priya Ranjan Saha', role:'', phone:'+917008436205', whatsapp:false },
+    { name:'Sangita Saha',      role:'', phone:'+919692071888', whatsapp:true }
+  ]
+
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   ▲▲▲  END OF THE EDITABLE BLOCK  ▲▲▲
+   ═══════════════════════════════════════════════════════════════ */
+
+
+(function(){
+  'use strict';
+
+  var $  = function(s){ return document.querySelector(s); };
+
+  /* Bind only if the element is there. Commenting a button out of the
+     HTML used to throw here and abort the whole of init(), silently
+     killing every listener wired after it. */
+  function on(sel, evt, fn){
+    var el = (typeof sel === 'string') ? $(sel) : sel;
+    if(el) el.addEventListener(evt, fn);
+    return el;
+  }
+  var TBA = 'To be announced';
+
+  var MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+  var DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+  var ICONS = {
+    cal:  '<path d="M3 5.5h18v15H3z" /><path d="M3 10h18M8 3v4.5M16 3v4.5"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5.4l3.4 2"/>',
+    pin:  '<path d="M20 10c0 6.5-8 12-8 12s-8-5.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/>',
+    note: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.5"/>',
+    ring: '<path d="M12 3.5l2.2 2.6-2.2 2.6-2.2-2.6z"/><circle cx="12" cy="15" r="5.5"/>',
+    glass:'<path d="M6 3h12l-5 8v7M11 18h4M9 21h6"/><path d="M7.4 7h9.2"/>'
+  };
+
+  function svg(path, w){
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' +
+           (w || 1.7) + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+           path + '</svg>';
+  }
+
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  /* ── date / time helpers ───────────────────────────────── */
+
+  var TZ    = CONFIG.timezone || '+05:30';
+  var TZLBL = CONFIG.tzLabel  || 'IST';
+
+  /* 'YYYY-MM-DD' + 'HH:MM' -> the exact moment in TIME, anchored to the
+     venue's timezone.
+
+     This has to be anchored. Built from local fields instead, a guest
+     opening the page in Dubai would get 6 PM *Gulf* time — the calendar
+     entry and the countdown would both be off by hours. Appending the
+     offset pins it to one real instant for everybody. */
+  function toDate(dateStr, timeStr){
+    if(!dateStr) return null;
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return null;
+
+    var t = timeStr || '00:00';
+    if(/^\d:/.test(t)) t = '0' + t;
+
+    var dt = new Date(dateStr + 'T' + t + ':00' + TZ);
+    return isNaN(dt.getTime()) ? null : dt;
+  }
+
+  /* Display reads the CONFIG strings directly rather than the Date, so
+     what a guest sees is always the venue's wall-clock time, whatever
+     timezone their phone is set to. */
+
+  function fmtDate(dateStr){
+    var d = dateStr.split('-');
+    return (+d[2]) + ' ' + MONTHS[+d[1] - 1] + ' ' + d[0];
+  }
+
+  function fmtTime(timeStr){
+    var t = (timeStr || '00:00').split(':');
+    var h = +t[0], m = +t[1] || 0;
+    var ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12; if(h === 0) h = 12;
+    return h + ':' + (m < 10 ? '0' + m : m) + ' ' + ap;
+  }
+
+  // Noon UTC keeps the weekday off the midnight boundary in every locale
+  function weekday(dateStr){
+    var d = dateStr.split('-');
+    return DAYS[new Date(Date.UTC(+d[0], +d[1] - 1, +d[2], 12)).getUTCDay()];
+  }
+
+  /* ── event card ────────────────────────────────────────── */
+
+  // mod: '' | 'tba' (italic placeholder) | 'soft' (quieter prose)
+  function row(icon, key, value, sub, mod){
+    return '' +
+      '<div class="row">' +
+        '<div class="ic">' + svg(icon) + '</div>' +
+        '<div>' +
+          '<div class="k">' + esc(key) + '</div>' +
+          '<div class="v' + (mod ? ' ' + mod : '') + '">' + esc(value) + '</div>' +
+          (sub ? '<div class="s">' + esc(sub) + '</div>' : '') +
+        '</div>' +
+      '</div>';
+  }
+
+  function buildEvent(ev, mountId, subId, badgeIcon, idKey){
+    var mount = document.getElementById(mountId);
+    if(!mount) return;
+
+    var dt   = toDate(ev.date, ev.start);
+    var html = '';
+
+    /* header strip */
+    html += '<div class="card-top">' +
+              '<div class="badge">' + svg(badgeIcon, 1.8) + '</div>' +
+              '<div>' +
+                '<div class="t">' + esc(ev.label) + '</div>' +
+                '<div class="d">' + (dt ? esc(weekday(ev.date)) : 'Date to be announced') + '</div>' +
+              '</div>' +
+            '</div>';
+
+    /* date */
+    html += dt
+      ? row(ICONS.cal, 'Date', fmtDate(ev.date), weekday(ev.date), '')
+      : row(ICONS.cal, 'Date', TBA, '', 'tba');
+
+    /* time */
+    html += dt
+      ? row(ICONS.clock, 'Time', fmtTime(ev.start) + ' ' + TZLBL, ev.timeNote || '', '')
+      : row(ICONS.clock, 'Time', TBA, '', 'tba');
+
+    /* venue */
+    html += ev.venue
+      ? row(ICONS.pin, 'Venue', ev.venue, ev.address || '', '')
+      : row(ICONS.pin, 'Venue', TBA, 'We’ll update this page as soon as it’s confirmed.', 'tba');
+
+    /* actions */
+    html += '<div class="card-acts">';
+
+    html += ev.mapUrl
+      ? '<a class="btn solid" href="' + esc(ev.mapUrl) + '" target="_blank" rel="noopener">' +
+          svg('<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>', 1.9) +
+          'Directions</a>'
+      : '<span class="btn off">' +
+          svg('<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>', 1.9) +
+          'Map soon</span>';
+
+    html += dt
+      ? '<button class="btn ghost" type="button" data-cal="' + esc(idKey) + '">' +
+          svg('<path d="M3 5.5h18v15H3z"/><path d="M3 10h18M8 3v4.5M16 3v4.5"/><path d="M12 13v4M10 15h4"/>', 1.8) +
+          'Add to calendar</button>'
+      : '<span class="btn off">' +
+          svg('<path d="M3 5.5h18v15H3z"/><path d="M3 10h18M8 3v4.5M16 3v4.5"/>', 1.8) +
+          'Date soon</span>';
+
+    html += '</div>';
+
+    mount.innerHTML = html;
+
+    /* one-line summary under the section heading */
+    var sub = document.getElementById(subId);
+    if(sub){
+      sub.textContent = dt
+        ? fmtDate(ev.date) + '  ·  ' + fmtTime(ev.start) + ' ' + TZLBL
+        : 'Date and venue to be announced';
+    }
+  }
+
+  /* ── calendar file ─────────────────────────────────────── */
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function utcStamp(dt){
+    return dt.getUTCFullYear() + pad(dt.getUTCMonth() + 1) + pad(dt.getUTCDate()) +
+           'T' + pad(dt.getUTCHours()) + pad(dt.getUTCMinutes()) + '00Z';
+  }
+
+  /* Pulls one event out of CONFIG and normalises it for both the
+     Google link and the .ics file, so the two can never disagree. */
+  function eventFor(key){
+    var ev = CONFIG[key];
+    if(!ev) return null;
+
+    var start = toDate(ev.date, ev.start);
+    if(!start) return null;
+
+    var end = toDate(ev.date, ev.end);
+    if(!end || end <= start){
+      end = new Date(start.getTime() + 3 * 60 * 60 * 1000);
+    }
+
+    var title = CONFIG.couple.nameA + ' & ' + CONFIG.couple.nameB + ' — ' + ev.label;
+    var where = [ev.venue, ev.address].filter(Boolean).join(', ');
+    var desc  = ev.note || 'We would be honoured by your presence.';
+
+    return {
+      key:key, start:start, end:end,
+      title:title,
+      where:where || TBA,
+      desc:desc
+    };
+  }
+
+  // RFC 5545 text values: backslash, semicolon, comma and newlines are
+  // all special. An unescaped comma in "Venue, Town, State" makes some
+  // calendars read it as a list and drop most of the address.
+  function icsText(s){
+    return String(s == null ? '' : s)
+      .replace(/\\/g,'\\\\')
+      .replace(/;/g,'\\;')
+      .replace(/,/g,'\\,')
+      .replace(/\r\n|\r|\n/g,'\\n');
+  }
+
+  // RFC 5545 caps a line at 75 octets; longer ones must continue on the
+  // next line starting with a space. Outlook rejects files that don't.
+  function fold(line){
+    if(line.length <= 72) return line;
+
+    var out = [line.slice(0, 72)];
+    var i = 72;
+
+    while(i < line.length){
+      out.push(' ' + line.slice(i, i + 71));
+      i += 71;
+    }
+    return out.join('\r\n');
+  }
+
+  function icsFile(e){
+    var lines = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//wedding-invite//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:' + e.key + '-' + Date.now() + '@wedding-invite',
+      'DTSTAMP:' + utcStamp(new Date()),
+      'DTSTART:' + utcStamp(e.start),
+      'DTEND:'   + utcStamp(e.end),
+      'SUMMARY:'     + icsText(e.title),
+      'LOCATION:'    + icsText(e.where),
+      'DESCRIPTION:' + icsText(e.desc),
+      'BEGIN:VALARM',
+      'TRIGGER:-P1D',
+      'ACTION:DISPLAY',
+      'DESCRIPTION:' + icsText(e.title + ' is tomorrow'),
+      'END:VALARM',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ];
+
+    return lines.map(fold).join('\r\n') + '\r\n';
+  }
+
+  // A plain https link, which is the whole point: it survives the
+  // in-app browsers (WhatsApp, Instagram, Facebook) that silently
+  // refuse blob downloads — and that is where most guests will open this.
+  function googleUrl(e){
+    var q = [
+      'action=TEMPLATE',
+      'text='     + encodeURIComponent(e.title),
+      'dates='    + utcStamp(e.start) + '/' + utcStamp(e.end),
+      'details='  + encodeURIComponent(e.desc),
+      'location=' + encodeURIComponent(e.where)
+    ];
+    return 'https://calendar.google.com/calendar/render?' + q.join('&');
+  }
+
+  function downloadIcs(e){
+    var blob = new Blob([icsFile(e)], { type:'text/calendar;charset=utf-8' });
+    var a    = document.createElement('a');
+
+    // Feature-test rather than assume. If the browser has no download
+    // support we open the file instead, so something still happens.
+    if(typeof a.download === 'undefined'){
+      window.open('data:text/calendar;charset=utf-8,' +
+                  encodeURIComponent(icsFile(e)), '_blank');
+      return;
+    }
+
+    var url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = e.key + '.ics';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+    toast('Downloaded — open the file to add it');
+  }
+
+  /* ── the picker ────────────────────────────────────────── */
+
+  function addToCalendar(key){
+    var e = eventFor(key);
+    if(!e) return;
+
+    var pick = $('#pick');
+
+    $('#pickS').textContent = CONFIG[key].label + '  ·  ' +
+                              fmtDate(CONFIG[key].date) + ', ' +
+                              fmtTime(CONFIG[key].start) + ' ' + TZLBL;
+
+    $('#optGoogle').href = googleUrl(e);
+
+    $('#optIcs').onclick = function(){
+      downloadIcs(e);
+      closePick();
+    };
+
+    $('#optGoogle').onclick = function(){ closePick(); };
+
+    pick.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePick(){
+    $('#pick').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── countdown ─────────────────────────────────────────── */
+
+  function countdown(){
+    var box = $('#countdown');
+    if(!box) return;
+
+    var target = toDate(CONFIG.wedding.date, CONFIG.wedding.start);
+
+    if(!target){
+      box.className = 'countdown done';
+      box.innerHTML = '<div class="cd-cell"><b>Save the date</b><span>Announcing soon</span></div>';
+      return;
+    }
+
+    function tick(){
+      var diff = target - new Date();
+
+      if(diff <= 0){
+        box.className = 'countdown done';
+        box.innerHTML = '<div class="cd-cell"><b>Today is the day</b><span>Thank you for being here</span></div>';
+        return false;
+      }
+
+      var s = Math.floor(diff / 1000);
+      var parts = [
+        [Math.floor(s / 86400),      'Days'],
+        [Math.floor(s / 3600) % 24,  'Hours'],
+        [Math.floor(s / 60) % 60,    'Minutes'],
+        [s % 60,                     'Seconds']
+      ];
+
+      box.innerHTML = parts.map(function(p){
+        return '<div class="cd-cell"><b>' + p[0] + '</b><span>' + p[1] + '</span></div>';
+      }).join('');
+
+      return true;
+    }
+
+    if(tick()) setInterval(tick, 1000);
+  }
+
+  /* ── memories ──────────────────────────────────────────── */
+
+  var live = [];   // photos that actually loaded, in display order
+
+  function buildPhotos(){
+    var strip = $('#strip'), dots = $('#dots');
+    if(!strip) return;
+
+    var list = CONFIG.photos || [];
+    strip.innerHTML = '';
+
+    list.forEach(function(p, i){
+      var fig = document.createElement('figure');
+      fig.className = 'shot';
+
+      var img = new Image();
+      img.alt = p.caption || 'Our photo ' + (i + 1);
+      img.loading = i < 2 ? 'eager' : 'lazy';
+      img.decoding = 'async';
+
+      // A missing file becomes a dashed frame naming the file it wants,
+      // so it is obvious what to drop into the photos folder.
+      img.onerror = function(){
+        fig.className = 'shot empty';
+        fig.innerHTML =
+          svg('<rect x="3" y="6" width="18" height="14" rx="2.5"/>' +
+              '<path d="M8.5 6l1.4-2.2h4.2L15.5 6"/><circle cx="12" cy="13" r="3.4"/>') +
+          '<span>' + esc(p.src) + '</span>';
+        refreshDots();
+      };
+
+      img.onload = function(){
+        fig.dataset.live = '1';
+        refreshDots();
+      };
+
+      img.src = p.src;
+      fig.appendChild(img);
+
+      if(p.caption){
+        var cap = document.createElement('figcaption');
+        cap.className = 'cap';
+        cap.textContent = p.caption;
+        fig.appendChild(cap);
+      }
+
+      fig.addEventListener('click', function(){
+        if(fig.dataset.live === '1') openLb(p.src);
+      });
+
+      strip.appendChild(fig);
+    });
+
+    function refreshDots(){
+      live = [];
+      var shots = strip.querySelectorAll('.shot');
+
+      for(var i = 0; i < shots.length; i++){
+        if(shots[i].dataset.live === '1'){
+          live.push({ el:shots[i], src:list[i].src, caption:list[i].caption || '' });
+        }
+      }
+
+      if(!dots) return;
+      dots.innerHTML = shots.length > 1
+        ? new Array(shots.length + 1).join('<i></i>')
+        : '';
+      markDot();
+    }
+
+    function markDot(){
+      if(!dots || !dots.children.length) return;
+
+      var shots = strip.querySelectorAll('.shot');
+      var mid   = strip.scrollLeft + strip.clientWidth / 2;
+      var best  = 0, bestD = Infinity;
+
+      for(var i = 0; i < shots.length; i++){
+        var c = shots[i].offsetLeft + shots[i].offsetWidth / 2;
+        var d = Math.abs(c - mid);
+        if(d < bestD){ bestD = d; best = i; }
+      }
+
+      for(var j = 0; j < dots.children.length; j++){
+        dots.children[j].className = j === best ? 'on' : '';
+      }
+    }
+
+    var raf;
+    strip.addEventListener('scroll', function(){
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(markDot);
+    }, { passive:true });
+
+    refreshDots();
+  }
+
+  /* ── lightbox ──────────────────────────────────────────── */
+
+  var lbIndex = 0;
+
+  function openLb(src){
+    var at = 0;
+    for(var i = 0; i < live.length; i++){
+      if(live[i].src === src){ at = i; break; }
+    }
+    lbIndex = at;
+    showLb();
+    $('#lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb(){
+    $('#lb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showLb(){
+    if(!live.length) return;
+
+    var p = live[lbIndex];
+    $('#lbImg').src = p.src;
+    $('#lbImg').alt = p.caption || 'Our photo';
+    $('#lbCap').textContent = p.caption || '';
+    $('#lbCount').textContent = (lbIndex + 1) + ' / ' + live.length;
+
+    var many = live.length > 1;
+    $('#lbPrev').style.display = many ? 'flex' : 'none';
+    $('#lbNext').style.display = many ? 'flex' : 'none';
+  }
+
+  function stepLb(n){
+    if(!live.length) return;
+    lbIndex = (lbIndex + n + live.length) % live.length;
+    showLb();
+  }
+
+  /* ── contacts ──────────────────────────────────────────── */
+
+  function buildContacts(){
+    var mount = $('#people');
+    if(!mount) return;
+
+    mount.innerHTML = (CONFIG.contacts || []).map(function(c){
+      var digits = String(c.phone || '').replace(/[^\d+]/g,'');
+      var wa     = digits.replace(/\D/g,'');
+
+      // +918637385421 -> +91 86373 85421
+      var shown = digits.replace(/^(\+\d{2})(\d{5})(\d{5})$/, '$1 $2 $3');
+
+      var initial = (c.name || '?').trim().charAt(0).toUpperCase();
+
+      return '' +
+        '<div class="person">' +
+          '<div class="av">' + esc(initial) + '</div>' +
+          '<div class="info">' +
+            '<div class="nm">' + esc(c.name) + '</div>' +
+            (c.role ? '<div class="rl">' + esc(c.role) + '</div>' : '') +
+            '<div class="tel">' + esc(shown) + '</div>' +
+          '</div>' +
+          '<div class="taps">' +
+            '<a class="tap" href="tel:' + esc(digits) + '" aria-label="Call ' + esc(c.name) + '">' +
+              svg('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/>', 1.8) +
+            '</a>' +
+            (c.whatsapp
+              ? '<a class="tap wa" href="https://wa.me/' + esc(wa) + '" target="_blank" rel="noopener" aria-label="WhatsApp ' + esc(c.name) + '">' +
+                  svg('<path d="M3 21l1.6-4.5A8.4 8.4 0 1 1 7.8 19.6z"/><path d="M8.6 9.2c.2 2.6 3.6 6 6.2 6.2.7.1 1.6-.7 1.6-1.4l-1.9-1-1 .9c-1.1-.5-2.2-1.6-2.7-2.7l.9-1-1-1.9c-.7 0-1.5.9-1.4 1.6z"/>', 1.6) +
+                '</a>'
+              : '') +
+          '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  /* ── sticky nav: highlight the section you're looking at ── */
+
+  function navSpy(){
+    var links = {};
+    var anchors = document.querySelectorAll('.nav a');
+
+    for(var i = 0; i < anchors.length; i++){
+      links[anchors[i].dataset.t] = anchors[i];
+    }
+
+    var ids = ['wedding','memories','contact'];
+    var seen = {};
+    var lock = 0;   // while scrolling to a tapped section, trust the tap
+
+    function light(key){
+      for(var k in links){
+        links[k].className = (k === key) ? 'on' : '';
+      }
+    }
+
+    function paint(){
+      if(Date.now() < lock) return;
+      var best = null;
+      for(var i = 0; i < ids.length; i++){
+        if(seen[ids[i]]) best = ids[i];   // last one intersecting wins
+      }
+      light(best);
+    }
+
+    /* ── tap feedback: ripple + highlight straight away ───────
+       The smooth scroll takes ~600ms; without this the button
+       stays dead for that whole time and feels broken.        */
+    for(var j = 0; j < anchors.length; j++){
+      anchors[j].addEventListener('click', function(e){
+        var a = e.currentTarget;
+
+        light(a.dataset.t);
+        lock = Date.now() + 900;
+
+        if(navigator.vibrate) navigator.vibrate(8);
+
+        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+          var box = a.getBoundingClientRect();
+          var d   = Math.max(box.width, box.height) * 2.1;
+          var dot = document.createElement('span');
+
+          dot.className = 'ripple';
+          dot.style.width  = dot.style.height = d + 'px';
+          dot.style.left = ((e.clientX || box.left + box.width / 2) - box.left) + 'px';
+          dot.style.top  = ((e.clientY || box.top + box.height / 2) - box.top) + 'px';
+
+          a.appendChild(dot);
+          setTimeout(function(){
+            if(dot.parentNode) dot.parentNode.removeChild(dot);
+          }, 600);
+        }
+      });
+    }
+
+    if(!('IntersectionObserver' in window)) return;
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        seen[e.target.id] = e.isIntersecting;
+      });
+      paint();
+    }, { rootMargin:'-45% 0px -45% 0px', threshold:0 });
+
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) io.observe(el);
+    });
+  }
+
+  /* ── first visit: shimmer across the bar once so it gets noticed ── */
+  function navHint(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var nav = document.querySelector('.nav');
+    if(!nav) return;
+
+    nav.classList.add('hint-once');
+    setTimeout(function(){ nav.classList.remove('hint-once'); }, 4200);
+  }
+
+  /* ── reveal sections as they scroll in ─────────────────── */
+
+  function reveals(){
+    var els = document.querySelectorAll('.rv');
+
+    if(!('IntersectionObserver' in window) ||
+       window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      for(var i = 0; i < els.length; i++) els[i].classList.add('in');
+      return;
+    }
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin:'0px 0px -12% 0px', threshold:.08 });
+
+    for(var j = 0; j < els.length; j++) io.observe(els[j]);
+  }
+
+  /* ── toast ─────────────────────────────────────────────── */
+
+  var toastTimer;
+  function toast(msg){
+    var t = $('#toast');
+    if(!t) return;
+    t.textContent = msg;
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove('on'); }, 2600);
+  }
+
+  /* ── share ─────────────────────────────────────────────── */
+
+  function share(){
+    var c = CONFIG.couple;
+    var data = {
+      title: c.nameA + ' & ' + c.nameB + ' — Wedding',
+      text:  c.nameA + ' & ' + c.nameB + ' are getting married. All the details are here:',
+      url:   location.href
+    };
+
+    if(navigator.share){
+      navigator.share(data).catch(function(){ /* dismissed — nothing to do */ });
+      return;
+    }
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(location.href)
+        .then(function(){ toast('Link copied'); })
+        .catch(function(){ toast(location.href); });
+      return;
+    }
+
+    toast(location.href);
+  }
+
+  /* ── boot ──────────────────────────────────────────────── */
+
+  function init(){
+    var c = CONFIG.couple;
+
+    var set = function(sel, txt){
+      var el = $(sel);
+      if(el) el.textContent = txt;
+    };
+
+    document.title = c.nameA + ' ' + c.joiner + ' ' + c.nameB;
+
+    set('#nameA',    c.nameA);
+    set('#nameB',    c.nameB);
+    set('#joiner',   c.joiner);
+    set('#kicker',   c.kicker);
+    set('#occasion', c.occasion);
+    set('#blessing', c.blessing);
+
+    var sg = $('#signature');
+    if(sg) sg.innerHTML = esc(c.signature) + '<small>' + c.signoff + '</small>';
+
+    buildEvent(CONFIG.wedding, 'weddingCard', 'weddingSub', ICONS.ring, 'wedding');
+
+    buildPhotos();
+    buildContacts();
+    countdown();
+    navSpy();
+    navHint();
+    reveals();
+
+    /* calendar buttons are rendered by buildEvent, so delegate */
+    document.addEventListener('click', function(e){
+      var b = e.target.closest ? e.target.closest('[data-cal]') : null;
+      if(b) addToCalendar(b.dataset.cal);
+    });
+
+    on('#shareBtn', 'click', share);
+
+    /* calendar picker */
+    on('#pickX', 'click', closePick);
+    on('#pick', 'click', function(e){
+      if(e.target === this) closePick();   // tap the backdrop to dismiss
+    });
+
+    /* lightbox controls */
+    on('#lbClose', 'click', closeLb);
+    on('#lbPrev', 'click', function(){ stepLb(-1); });
+    on('#lbNext', 'click', function(){ stepLb(1); });
+
+    on('#lb', 'click', function(e){
+      if(e.target === this) closeLb();   // tap the backdrop to dismiss
+    });
+
+    document.addEventListener('keydown', function(e){
+      var pk = $('#pick'), lbx = $('#lb');
+
+      if(e.key === 'Escape' && pk && pk.classList.contains('open')) closePick();
+
+      if(!lbx || !lbx.classList.contains('open')) return;
+      if(e.key === 'Escape')     closeLb();
+      if(e.key === 'ArrowLeft')  stepLb(-1);
+      if(e.key === 'ArrowRight') stepLb(1);
+    });
+
+    /* swipe left / right inside the lightbox */
+    var x0 = null;
+    var lb = $('#lb');
+    if(!lb) return;
+
+    lb.addEventListener('touchstart', function(e){
+      x0 = e.touches[0].clientX;
+    }, { passive:true });
+
+    lb.addEventListener('touchend', function(e){
+      if(x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if(Math.abs(dx) > 55) stepLb(dx < 0 ? 1 : -1);
+      x0 = null;
+    }, { passive:true });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+
+})();
+</script>
+
+</body>
+</html>
